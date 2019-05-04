@@ -1,0 +1,21 @@
+[package]
+name = "exclusive"
+version = "0.1.0"
+authors = ["Nikolai Vazquez"]
+readme = "README.md"
+license = "MIT/Apache-2.0"
+homepage = "https://github.com/nvzqz/exclusive-rs"
+repository = "https://github.com/nvzqz/exclusive-rs"
+documentation = "https://docs.rs/exclusive"
+description = """
+Place code into an exclusive context that won't collide with another context.
+"""
+keywords = ["macros", "exclusive", "collision"]
+categories = ["no-std", "rust-patterns"]
+include = ["Cargo.toml", "src/**/*.rs", "README.md", "CHANGELOG.md", "LICENSE*"]
+
+[lib]
+proc-macro = true
+
+[features]
+nightly = []
