@@ -81,15 +81,18 @@ fn span_id(span: &Span) -> String {
     }
 
     let table: &[u8; 16] = b"0123456789ABCDEF";
-    let mut result = b"_EXCLUSIVE_".to_vec();
+    let bytes = bytes_of(span);
 
-    for &byte in bytes_of(span) {
+    let mut id = b"_EXCLUSIVE_".to_vec();
+    id.reserve_exact(bytes.len() * 2);
+
+    for &byte in bytes {
         let byte = byte as usize;
-        result.push(table[byte % 16]);
-        result.push(table[(byte >> 4) % 16]);
+        id.push(table[byte % 16]);
+        id.push(table[(byte >> 4) % 16]);
     }
 
-    unsafe { String::from_utf8_unchecked(result) }
+    unsafe { String::from_utf8_unchecked(id) }
 }
 
 /// Creates an exclusive context. 😎
