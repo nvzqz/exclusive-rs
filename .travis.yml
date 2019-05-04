@@ -1,0 +1,11 @@
+language: rust
+
+matrix:
+  include:
+    - rust: 1.30.0
+    - rust: stable
+    - rust: beta
+    - rust: nightly
+      env: FEATURES="--features nightly"
+
+script: cargo test $FEATURES
