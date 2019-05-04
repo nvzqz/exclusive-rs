@@ -7,8 +7,8 @@
 //! # Purpose
 //!
 //! This project was made to be used by
-//! [`static_assertions`](https://crates.io/crates/static_assertions) to prevent
-//! different assertions from colliding with the same identifier.
+//! [`static_assertions`](https://github.com/nvzqz/static-assertions-rs) to
+//! prevent different assertions from colliding with the same identifier.
 //!
 //! # Usage
 //!
